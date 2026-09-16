@@ -1,0 +1,13 @@
+C:\Users\johns\source\repos\sma-portfolio-construction-optimizer\csharp\PortfolioOptimization.Core\bin\Debug\net10.0\PortfolioOptimization.Core.deps.json
+C:\Users\johns\source\repos\sma-portfolio-construction-optimizer\csharp\PortfolioOptimization.Core\bin\Debug\net10.0\PortfolioOptimization.Core.dll
+C:\Users\johns\source\repos\sma-portfolio-construction-optimizer\csharp\PortfolioOptimization.Core\bin\Debug\net10.0\PortfolioOptimization.Core.pdb
+C:\Users\johns\source\repos\sma-portfolio-construction-optimizer\csharp\PortfolioOptimization.Core\obj\Debug\net10.0\PortfolioOptimization.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\johns\source\repos\sma-portfolio-construction-optimizer\csharp\PortfolioOptimization.Core\obj\Debug\net10.0\PortfolioOptimization.Core.AssemblyInfoInputs.cache
+C:\Users\johns\source\repos\sma-portfolio-construction-optimizer\csharp\PortfolioOptimization.Core\obj\Debug\net10.0\PortfolioOptimization.Core.AssemblyInfo.cs
+C:\Users\johns\source\repos\sma-portfolio-construction-optimizer\csharp\PortfolioOptimization.Core\obj\Debug\net10.0\PortfolioOptimization.Core.csproj.CoreCompileInputs.cache
+C:\Users\johns\source\repos\sma-portfolio-construction-optimizer\csharp\PortfolioOptimization.Core\obj\Debug\net10.0\PortfolioOptimization.Core.sourcelink.json
+C:\Users\johns\source\repos\sma-portfolio-construction-optimizer\csharp\PortfolioOptimization.Core\obj\Debug\net10.0\PortfolioOptimization.Core.dll
+C:\Users\johns\source\repos\sma-portfolio-construction-optimizer\csharp\PortfolioOptimization.Core\obj\Debug\net10.0\refint\PortfolioOptimization.Core.dll
+C:\Users\johns\source\repos\sma-portfolio-construction-optimizer\csharp\PortfolioOptimization.Core\obj\Debug\net10.0\PortfolioOptimization.Core.pdb
+C:\Users\johns\source\repos\sma-portfolio-construction-optimizer\csharp\PortfolioOptimization.Core\obj\Debug\net10.0\ref\PortfolioOptimization.Core.dll
+C:\Users\johns\source\repos\sma-portfolio-construction-optimizer\csharp\PortfolioOptimization.Core\obj\Debug\net10.0\PortfolioOptimization.Core.csproj.AssemblyReference.cache

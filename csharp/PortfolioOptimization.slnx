@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="PortfolioOptimization.API/PortfolioOptimization.API.csproj" />
+  <Project Path="PortfolioOptimization.Core/PortfolioOptimization.Core.csproj" />
+  <Project Path="PortfolioOptimization.Tests/PortfolioOptimization.Tests.csproj" />
+</Solution>

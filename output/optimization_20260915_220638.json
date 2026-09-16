@@ -1,0 +1,20 @@
+{
+  "timestamp": "2026-09-16T05:06:38.668358",
+  "optimization_id": "361ccf3a-be01-420d-bd25-171a54b012c0",
+  "portfolio_metrics": {
+    "expected_return": 0.07,
+    "expected_volatility": 0.06841052550594828,
+    "sharpe_ratio": 0.7308816827558576,
+    "status": "Success"
+  },
+  "allocation": {
+    "VTSAX": 0.2,
+    "VTIAX": 0.2,
+    "BND": 0.2,
+    "VGSLX": 0.2,
+    "GLD": 0.2
+  },
+  "warnings": [
+    "Using naive equal-weight allocation. Implement cvxpy for production."
+  ]
+}

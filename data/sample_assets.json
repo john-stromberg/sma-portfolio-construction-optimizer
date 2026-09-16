@@ -1,0 +1,44 @@
+{
+  "assets": [
+    {
+      "id": "VTSAX",
+      "name": "Vanguard Total Stock Market",
+      "asset_class": "Equity",
+      "expected_return": 0.10,
+      "volatility": 0.15,
+      "current_price": 245.50
+    },
+    {
+      "id": "VTIAX",
+      "name": "Vanguard International Stock",
+      "asset_class": "Equity",
+      "expected_return": 0.09,
+      "volatility": 0.18,
+      "current_price": 120.30
+    },
+    {
+      "id": "BND",
+      "name": "Vanguard Total Bond Market",
+      "asset_class": "Fixed Income",
+      "expected_return": 0.04,
+      "volatility": 0.05,
+      "current_price": 80.75
+    },
+    {
+      "id": "VGSLX",
+      "name": "Vanguard Real Estate",
+      "asset_class": "Alternative",
+      "expected_return": 0.07,
+      "volatility": 0.20,
+      "current_price": 150.20
+    },
+    {
+      "id": "GLD",
+      "name": "SPDR Gold Shares",
+      "asset_class": "Alternative",
+      "expected_return": 0.05,
+      "volatility": 0.14,
+      "current_price": 195.80
+    }
+  ]
+}
