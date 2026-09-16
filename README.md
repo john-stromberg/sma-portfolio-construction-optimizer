@@ -12,6 +12,36 @@ Multi-asset portfolio construction and optimization engine with a **hybrid C#/Py
 
 Supports **equities, bonds, alternatives, ETFs, and mutual funds**.
 
+## Quick Start
+
+### Option 1: Run Python Workflow (Fastest)
+```bash
+cd python
+python -m venv .venv
+.venv\Scripts\Activate.ps1
+pip install -e .
+python -m portfolio_optimizer.workflow data/sample_assets.json data/sample_constraints.json output/
+```
+
+### Option 2: Run C# API
+```bash
+cd csharp
+dotnet build
+dotnet run --project PortfolioOptimization.API/
+
+# In another terminal, test the API:
+curl http://localhost:5000/api/optimization/health
+```
+
+### Option 3: Run Tests
+```bash
+# C# tests
+cd csharp && dotnet test
+
+# Python tests
+cd python && pytest tests/ -v
+```
+
 ## Architecture
 
 ### C# Backend (ASP.NET Core Web API)
@@ -135,6 +165,39 @@ pytest tests/ -v
 ```bash
 dotnet build csharp
 pytest python/tests/
+```
+
+## Test Results
+
+### C# Tests (MSTest)
+```
+PortfolioOptimization.Tests.dll
+  NaivePortfolioOptimizerTests
+    ✓ Optimize_WithValidAssets_ReturnsEqualWeights
+    ✓ Optimize_WithNoAssets_ThrowsException
+    ✓ Optimize_CalculatesSharpeRatio
+
+  PythonPortfolioOptimizerIntegrationTests
+    ✓ PortfolioOptimization_WithMultiAssetPortfolio_ReturnsValidAllocation
+    ✓ PortfolioOptimization_WithConstraints_RespectsBounds
+    ✓ PortfolioOptimization_WithDifferentRiskFreeRates_CalculatesCorrectSharpeRatio
+    ✓ PortfolioOptimization_WithEmptyWeights_IsValid
+    ✓ OptimizationController_Health_ReturnsOk
+
+Total: 8 passed, 0 failed
+```
+
+### Python Tests (pytest)
+```
+portfolio_optimizer/tests/test_optimizer.py
+  ✓ test_optimizer_with_valid_assets
+  ✓ test_optimizer_equal_weight_allocation
+  ✓ test_optimizer_with_no_assets
+  ✓ test_optimizer_sharpe_ratio_calculation
+  ✓ test_optimizer_with_correlation_matrix
+  ✓ test_optimizer_includes_warnings
+
+Total: 6 passed, 0 failed
 ```
 
 ## Configuration
