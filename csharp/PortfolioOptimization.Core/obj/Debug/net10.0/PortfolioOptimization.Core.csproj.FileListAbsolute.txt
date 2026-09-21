@@ -11,3 +11,4 @@ C:\Users\johns\source\repos\sma-portfolio-construction-optimizer\csharp\Portfoli
 C:\Users\johns\source\repos\sma-portfolio-construction-optimizer\csharp\PortfolioOptimization.Core\obj\Debug\net10.0\PortfolioOptimization.Core.pdb
 C:\Users\johns\source\repos\sma-portfolio-construction-optimizer\csharp\PortfolioOptimization.Core\obj\Debug\net10.0\ref\PortfolioOptimization.Core.dll
 C:\Users\johns\source\repos\sma-portfolio-construction-optimizer\csharp\PortfolioOptimization.Core\obj\Debug\net10.0\PortfolioOptimization.Core.csproj.AssemblyReference.cache
+C:\Users\johns\source\repos\sma-portfolio-construction-optimizer\csharp\PortfolioOptimization.Core\obj\Debug\net10.0\Portfoli.A83BB048.Up2Date

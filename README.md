@@ -14,6 +14,21 @@ Supports **equities, bonds, alternatives, ETFs, and mutual funds**.
 
 ## Quick Start
 
+### Visual Studio
+
+1. Install Visual Studio with the **ASP.NET and web development** workload and
+   .NET 10 SDK support.
+2. Open `PortfolioOptimization.sln` from the repository root.
+3. In Solution Explorer, right-click `PortfolioOptimization.API`, select
+   **Set as Startup Project**, and press **F5**.
+4. Use **Test > Test Explorer** to run `PortfolioOptimization.Tests`.
+
+The API starts at `https://localhost:7167` and `http://localhost:5181` by
+default. The Python optimizer is optional and disabled in
+`csharp/PortfolioOptimization.API/appsettings.json`. To work on the Python
+engine in Visual Studio, install the **Python development** workload and use
+**File > Open > Folder** on the repository root.
+
 ### Option 1: Run Python Workflow (Fastest)
 ```bash
 cd python
@@ -121,6 +136,7 @@ curl -X POST http://localhost:5000/api/optimization/optimize \
 
 ## Repository structure
 
+- `PortfolioOptimization.sln` - Root Visual Studio solution
 - `csharp/` - Visual Studio solution with C# projects
   - `PortfolioOptimization.slnx` - Solution file
   - `PortfolioOptimization.Core/` - Core business logic
@@ -227,5 +243,4 @@ Default: `false` (uses NaivePortfolioOptimizer)
 - [ ] Add batch processing pipeline
 - [ ] Implement performance attribution
 - [ ] Add live market data feeds
-
 

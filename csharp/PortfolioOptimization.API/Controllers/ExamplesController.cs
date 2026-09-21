@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using PortfolioOptimization.Core.Models;
+using PortfolioOptimization.Core.Services;
 
 namespace PortfolioOptimization.API.Controllers;
 
@@ -8,10 +9,16 @@ namespace PortfolioOptimization.API.Controllers;
 public class ExamplesController : ControllerBase
 {
     private readonly ILogger<ExamplesController> _logger;
+    private readonly IPortfolioOptimizer _optimizer;
+    private readonly ExampleDataGenerator _exampleDataGenerator;
 
-    public ExamplesController(ILogger<ExamplesController> logger)
+    public ExamplesController(
+        ILogger<ExamplesController> logger,
+        IPortfolioOptimizer optimizer)
     {
         _logger = logger;
+        _optimizer = optimizer;
+        _exampleDataGenerator = new ExampleDataGenerator();
     }
 
     /// <summary>
@@ -127,5 +134,66 @@ public class ExamplesController : ControllerBase
             assetOrder = new[] { "VTSAX", "VTIAX", "BND", "VGSLX", "GLD" },
             matrix = correlationMatrix,
         });
+    }
+
+    /// <summary>
+    /// Generate a random client onboarding example and optimize their portfolio.
+    /// </summary>
+    /// <param name="riskTolerance">Optional risk tolerance level (0=Conservative, 1=Moderate, 2=Aggressive). If not specified, a random level is chosen.</param>
+    /// <returns>Complete client onboarding example with optimized portfolio.</returns>
+    [HttpGet("client-onboarding")]
+    public async Task<IActionResult> GenerateClientOnboardingExample([FromQuery] int? riskTolerance = null)
+    {
+        try
+        {
+            _logger.LogInformation("Generating client onboarding example with risk tolerance: {RiskTolerance}", riskTolerance?.ToString() ?? "random");
+
+            // Generate a random client onboarding example
+            RiskTolerance? riskToleranceEnum = null;
+            if (riskTolerance.HasValue)
+            {
+                riskToleranceEnum = (RiskTolerance)riskTolerance.Value;
+            }
+
+            var onboardingExample = _exampleDataGenerator.GenerateClientOnboardingExample(riskToleranceEnum);
+
+            _logger.LogInformation("Generated client profile: {ClientId}, Risk Tolerance: {RiskTolerance}", 
+                onboardingExample.ClientProfile.ClientId, 
+                onboardingExample.ClientProfile.RiskTolerance);
+
+            // Create optimization request
+            var optimizationRequest = new OptimizationRequest
+            {
+                Assets = onboardingExample.AvailableAssets,
+                Constraints = onboardingExample.ConstraintsDerived,
+                CorrelationMatrix = onboardingExample.CorrelationMatrix,
+                RiskFreeRate = onboardingExample.RiskFreeRate,
+            };
+
+            // Optimize the portfolio
+            var optimizedPortfolio = await _optimizer.OptimizeAsync(
+                optimizationRequest.Assets,
+                optimizationRequest.Constraints,
+                optimizationRequest.CorrelationMatrix,
+                optimizationRequest.RiskFreeRate ?? 0.02);
+
+            onboardingExample.OptimizedPortfolio = optimizedPortfolio;
+
+            _logger.LogInformation("Portfolio optimized for client {ClientId}. Sharpe Ratio: {SharpeRatio:F4}", 
+                onboardingExample.ClientProfile.ClientId,
+                optimizedPortfolio.SharpeRatio);
+
+            return Ok(onboardingExample);
+        }
+        catch (ArgumentException ex)
+        {
+            _logger.LogWarning("Validation error during client onboarding generation: {Message}", ex.Message);
+            return BadRequest(new { error = ex.Message });
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "Failed to generate client onboarding example.");
+            return StatusCode(500, new { error = "Failed to generate client onboarding example.", details = ex.Message });
+        }
     }
 }

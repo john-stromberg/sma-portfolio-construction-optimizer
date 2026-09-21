@@ -34,3 +34,4 @@ C:\Users\johns\source\repos\sma-portfolio-construction-optimizer\csharp\Portfoli
 C:\Users\johns\source\repos\sma-portfolio-construction-optimizer\csharp\PortfolioOptimization.API\obj\Debug\net10.0\PortfolioOptimization.API.pdb
 C:\Users\johns\source\repos\sma-portfolio-construction-optimizer\csharp\PortfolioOptimization.API\obj\Debug\net10.0\PortfolioOptimization.API.genruntimeconfig.cache
 C:\Users\johns\source\repos\sma-portfolio-construction-optimizer\csharp\PortfolioOptimization.API\obj\Debug\net10.0\ref\PortfolioOptimization.API.dll
+C:\Users\johns\source\repos\sma-portfolio-construction-optimizer\csharp\PortfolioOptimization.API\obj\Debug\net10.0\staticwebassets.upToDateCheck.txt

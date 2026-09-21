@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PortfolioOptimization.API")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+097d01e429ceef98647243d2ee3791a1cc75d211")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+130922b59bbc49263f23719adb1a02fc3f73c2e9")]
 [assembly: System.Reflection.AssemblyProductAttribute("PortfolioOptimization.API")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PortfolioOptimization.API")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
